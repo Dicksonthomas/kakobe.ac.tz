@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style3.css">
+<title>Registration System Panel</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box form-box">
+            <header>Welcome to Our Register System
+            <h6>All field with star are required</h6></header>
+            <form action="" method="POST"><b>
+                <font color="red">
+                <div class="field input">
+                    <label for="username">First Name*</label>
+                    <input type="text" name="username" placeholder="e.g Dickson" id="username" required>
+                </div>
+                <div class="field input">
+                    <label for="username">Middle Name*</label>
+                    <input type="text" name="username" placeholder="e.g M." id="username" required>
+                </div>
+                <div class="field input">
+                    <label for="username">Last Name*</label>
+                    <input type="text" name="username" placeholder="e.g Thomas" id="username" required>
+                </div>
+
+                <div class="field input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" placeholder="e.g dicksonthomas123@gmail.com" id="email">
+                </div>
+                <br>
+
+            <div class="form-group">
+            <!-- Radio buttons for gender selection -->
+            <lable>Sex.*</label></font></b>
+                    <lable for="Gender">Female</lable>
+             <input type="radio" id="Female" name="Sex" value="Female" placeholder="#" required>
+
+             <lable for="Gender">Male</lable>
+             <input type="radio" id="Male" name="Sex" value="Male" placeholder="#" required>
+             
+             <lable for="Gender">Other</lable>
+             <input type="radio" id="other" name="Sex" value="other" placeholder="#" required>
+                </lable>
+            </div><br><b>
+            <div class="field input"><font color="red">
+                <label>Date of Birth*</label>
+                <input type="date" name="date" placeholder="7/24/2028" required>
+            </div>
+            <div class="field input">
+                <label>Level*</label>
+                <input type="text" name="text" placeholder="Enter your Level" required>
+                </div>
+                <div class="field input">
+                    <label>NIN</label>
+                    <input type="number" name="number" placeholder="Enter your National Idendity Number here (Option)">
+                    </div>
+                    <div class="field input">
+                        <label>Guardian Phone number</label>
+                        <input type="number" name="number" placeholder="255 764 150 681 (Option)">
+                        </div>              
+                <div class="all">
+                <div class="field input" required>                   
+             </div>  
+            </div>  
+                <div class="field input">
+                    <label for="password">Password*</label>
+                    <input type="password" name="password" placeholder="Create a strong password" id="password" autocomplete="off" required>
+                </div>
+                <div class="field input">
+                    <label for="password">Confirm Password*</label>
+                    <input type="password" name="cpassword" placeholder="Re-type" id="cpassword" autocomplete="off" required>
+                </div></font></b>
+
+
+                <div class="field">
+                    <input type="submit"class="btn"  name="submit" value="Register" required>
+                </div>
+                <div class="links">
+                    Already a member? <a href="login.html">Login Now</a>
+                </div>
+                 
+            </form>
+       </div>
+    </div>
+</body>
+</html>

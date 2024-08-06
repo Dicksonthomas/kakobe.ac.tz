@@ -1,0 +1,53 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	font-size: 20px;
+	background: #F8F8FF;
+}
+
+.header{
+	width: 30%;
+	margin: 50px auto 0px;
+	color: white;
+	background: hsl(255, 70%, 52%);
+	text-align: center;
+	border: 1px solid #03000e00;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+	text-decoration: none;
+}
+.input-group lable{
+	display: block;
+	text-align: left;
+	margin: 3px;
+}
+
+.input-group input{
+	height: 30px;
+	width: 93%;
+	padding: 5px 10px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+}
+.btn{
+	padding: 10px;
+	font-size: 16px;
+	color: white;
+	background: hsl(236, 74%, 56%);
+	border: none;
+	border-radius: 5px;
+}
+ul{
+	width: 30%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #0ec4b5;
+	background: #e8f4efd0;
+	border-radius: 0px 0px 10px 10px;
+	text-decoration: none;
+
+}
