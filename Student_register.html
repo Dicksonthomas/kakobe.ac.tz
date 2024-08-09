@@ -8,84 +8,123 @@
     <div class="container">
         <div class="box form-box">
             <header>Welcome to Our Register System
-            <h6>All field with star are required</h6></header>
+            <h6>All fields with a star are required</h6></header>
             <form action="" method="POST"><b>
-                <font color="red">
                 <div class="field input">
-                    <label for="username">First Name*</label>
-                    <input type="text" name="username" placeholder="e.g Dickson" id="username" required>
+                    <label for="fname">First Name*</label>
+                    <input type="text" name="fname" placeholder="e.g Dickson" id="fname" required>
                 </div>
                 <div class="field input">
-                    <label for="username">Middle Name*</label>
-                    <input type="text" name="username" placeholder="e.g M." id="username" required>
+                    <label for="mname">Middle Name*</label>
+                    <input type="text" name="mname" placeholder="e.g M." id="mname" required disabled>
                 </div>
                 <div class="field input">
-                    <label for="username">Last Name*</label>
-                    <input type="text" name="username" placeholder="e.g Thomas" id="username" required>
+                    <label for="lname">Last Name*</label>
+                    <input type="text" name="lname" placeholder="e.g Thomas" id="lname" required disabled>
                 </div>
 
                 <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" placeholder="e.g dicksonthomas123@gmail.com" id="email">
+                    <label for="email">Email*</label>
+                    <input type="email" name="email" placeholder="e.g dicksonthomas123@gmail.com" id="email" disabled>
                 </div>
                 <br>
 
-            <div class="form-group">
-            <!-- Radio buttons for gender selection -->
-            <lable>Sex.*</label></font></b>
-                    <lable for="Gender">Female</lable>
-             <input type="radio" id="Female" name="Sex" value="Female" placeholder="#" required>
+                <div class="form-group">
+                    <label>Sex*</label>
+                    <label for="Female">Female</label>
+                    <input type="radio" id="Female" name="Sex" value="Female" required disabled>
+                    <label for="Male">Male</label>
+                    <input type="radio" id="Male" name="Sex" value="Male" required disabled>
+                    <label for="Other">Other</label>
+                    <input type="radio" id="Other" name="Sex" value="Other" required disabled>
+                </div><br>
 
-             <lable for="Gender">Male</lable>
-             <input type="radio" id="Male" name="Sex" value="Male" placeholder="#" required>
-             
-             <lable for="Gender">Other</lable>
-             <input type="radio" id="other" name="Sex" value="other" placeholder="#" required>
-                </lable>
-            </div><br><b>
-            <div class="field input"><font color="red">
-                <label>Date of Birth*</label>
-                <input type="date" name="date" placeholder="7/24/2028" required>
-            </div>
-            <div class="field input">
-                <label>Level*</label>
-                <input type="text" name="text" placeholder="Enter your Level" required>
+                <div class="field input">
+                    <label>Date of Birth*</label>
+                    <input type="date" name="date" required disabled>
+                </div>
+                <div class="field input">
+                    <label>Level*</label>
+                    <input type="text" name="level" placeholder="Enter your Level" required disabled>
                 </div>
                 <div class="field input">
                     <label>NIN</label>
-                    <input type="number" name="number" placeholder="Enter your National Idendity Number here (Option)">
-                    </div>
-                    <div class="field input">
-                        <label>Guardian Phone number</label>
-                        <input type="number" name="number" placeholder="255 764 150 681 (Option)">
-                        </div>              
-                <div class="all">
-                <div class="field input" required>                   
-             </div>  
-            </div>  
+                    <input type="number" name="nin" placeholder="Enter your National Identity Number here (Optional)" disabled>
+                </div>
+                <div class="field input">
+                    <label>Guardian Phone number</label>
+                    <input type="number" name="gphone" placeholder="255 764 150 681 (Optional)" disabled>
+                </div>
+
                 <div class="field input">
                     <label for="password">Password*</label>
-                    <input type="password" name="password" placeholder="Create a strong password" id="password" autocomplete="off" required>
+                    <input type="password" name="password" placeholder="Create a strong password" id="password" autocomplete="off" required disabled>
                 </div>
                 <div class="field input">
-                    <label for="password">Confirm Password*</label>
-                    <input type="password" name="cpassword" placeholder="Re-type" id="cpassword" autocomplete="off" required>
-                </div></font></b>
-        <div class="field input">
-                    <label for="number">Numbers*</label>
-                    <input type="number" name="number" placeholder="Re-type" id="cpassword" autocomplete="off" required>
-                </div></font></b>
-
-
-                <div class="field">
-                    <input type="submit"class="btn"  name="submit" value="Register" required>
+                    <label for="cpassword">Confirm Password*</label>
+                    <input type="password" name="cpassword" placeholder="Re-type" id="cpassword" autocomplete="off" required disabled>
                 </div>
+                
+                <div class="field">
+                    <input type="submit" class="btn" name="submit" value="Register" disabled>
+                </div>
+                
                 <div class="links">
                     Already a member? <a href="login.html">Login Now</a>
                 </div>
-                 
             </form>
        </div>
     </div>
+
+    <script>
+        // Disable fields until the previous fields are filled
+        document.getElementById('fname').addEventListener('input', function() {
+            document.getElementById('mname').disabled = !this.value.trim();
+        });
+
+        document.getElementById('mname').addEventListener('input', function() {
+            document.getElementById('lname').disabled = !this.value.trim();
+        });
+
+        document.getElementById('lname').addEventListener('input', function() {
+            document.getElementById('email').disabled = !this.value.trim();
+        });
+
+        document.getElementById('email').addEventListener('input', function() {
+            let sexFields = document.querySelectorAll('input[name="Sex"]');
+            sexFields.forEach(field => field.disabled = !this.value.trim());
+        });
+
+        document.querySelectorAll('input[name="Sex"]').forEach(function(elem) {
+            elem.addEventListener('change', function() {
+                document.querySelector('input[name="date"]').disabled = !document.querySelector('input[name="Sex"]:checked');
+            });
+        });
+
+        document.querySelector('input[name="date"]').addEventListener('input', function() {
+            document.querySelector('input[name="level"]').disabled = !this.value.trim();
+        });
+
+        document.querySelector('input[name="level"]').addEventListener('input', function() {
+            document.querySelector('input[name="nin"]').disabled = !this.value.trim();
+            document.querySelector('input[name="gphone"]').disabled = !this.value.trim();
+        });
+
+        document.querySelector('input[name="nin"]').addEventListener('input', function() {
+            document.querySelector('input[name="password"]').disabled = !this.value.trim();
+        });
+
+        document.querySelector('input[name="gphone"]').addEventListener('input', function() {
+            document.querySelector('input[name="password"]').disabled = !this.value.trim();
+        });
+
+        document.querySelector('input[name="password"]').addEventListener('input', function() {
+            document.querySelector('input[name="cpassword"]').disabled = !this.value.trim();
+        });
+
+        document.querySelector('input[name="cpassword"]').addEventListener('input', function() {
+            document.querySelector('input[type="submit"]').disabled = !this.value.trim();
+        });
+    </script>
 </body>
 </html>
