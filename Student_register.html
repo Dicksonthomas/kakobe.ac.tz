@@ -47,10 +47,7 @@
                     <label>Level*</label>
                     <input type="text" name="level" placeholder="Enter your Level" required disabled>
                 </div>
-                <div class="field input">
-                    <label>NIN</label>
-                    <input type="number" name="nin" placeholder="Enter your National Identity Number here (Optional)" disabled>
-                </div>
+    
                 <div class="field input">
                     <label>Guardian Phone number</label>
                     <input type="number" name="gphone" placeholder="255 764 150 681 (Optional)" disabled>
@@ -106,11 +103,11 @@
         });
 
         document.querySelector('input[name="level"]').addEventListener('input', function() {
-          
+            document.querySelector('input[name="nin"]').disabled = !this.value.trim();
             document.querySelector('input[name="gphone"]').disabled = !this.value.trim();
         });
 
-       
+        document.querySelector('input[name="nin"]').addEventListener('input', function() {
             document.querySelector('input[name="password"]').disabled = !this.value.trim();
         });
 
